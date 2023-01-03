@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture 70-Javascript Class Members</title>
+    <style></style>
+  </head>
+  <body>
+    <!-- this is for the HTML code -->
+
+    <script>
+      /* syntax
+        
+        class ClassName{pascal case
+            //1 member
+            //2 Member
+            //3 member
+            */
+
+      //1 function definnation
+      function myFunction() {}
+      //2 Function Calling
+      myFunction();
+      let x = 10; // global variable
+      var z = 50; // global variable
+
+      class MyClass {
+        //1 Member 1 (properties)
+        //what are properties in class? Properties are variable decleared under the class.
+
+        y = 20; //member1
+        a = 20; //Properties
+
+        //2 Member 2
+
+        //3 Method defination
+        myFunction2() {
+          console.log("Hi2");
+        }
+
+        addNumbers() {
+          //this=>belongs to current class object.this is internal class object.
+          console.log(x + this.y);
+          console.log(this.addNumbers2());
+        }
+
+        addNumbers2() {
+          // console.log(z + this.a);
+          return z + this.a;
+        }
+        addNumbers3(b) {
+          //formal argument/parameter
+          console.log(this.y + this.a + b);
+        }
+      }
+
+      /* let Object= new ClassName();
+            object.method();
+            . = member selection operator*/
+      let object = new MyClass();
+      //Method Calling
+      object.myFunction2();
+      object.addNumbers();
+      object.addNumbers3(40); //actual argumenent/parameter
+    </script>
+    <script>
+      class MyClassA {
+        //1.prperties
+        x = 150;
+
+        //2
+
+        //3.method
+      }
+
+      class MyClassB extends MyClassA {
+        //1. Properties
+        y = 20;
+
+        //2.
+
+        //3.Method
+        addMyNumbers() {
+          console.log();
+        }
+      }
+
+      let Objectb = new MyClassB();
+      console.log(Objectb.x + Objectb.y);
+    </script>
+    <script>
+      class MyClassAA {
+        //1.Properties
+        name = "Santosh";
+        surname = "Chaugule";
+        age; //Declare
+
+        //2.
+        constructor() {
+          //Initialize
+          this.age = 30; //Associativity of operator
+        }
+
+        //3.Method
+
+        hello() {
+          console.log(
+            "Hello " +
+              this.name +
+              " " +
+              this.surname +
+              " You are " +
+              this.age +
+              " Year Old "
+          );
+        }
+      }
+      let Oaa = new MyClassAA();
+      Oaa.hello();
+    </script>
+  </body>
+</html>

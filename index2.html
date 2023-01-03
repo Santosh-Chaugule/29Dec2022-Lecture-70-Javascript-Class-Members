@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let xx;
+      class MyA {
+        //1 properties
+        x = 10;
+        z;
+
+        //2. Constructor
+        constructor(b) {
+          this.z = b;
+          xx = b;
+        }
+
+        //3. Method
+        showResult() {
+          console.log(this.x + this.y + this.z + xx);
+        }
+      }
+
+      class MyB extends MyA {
+        //1 properties
+        y = 20;
+
+        //2. Constructor
+        constructor(a) {
+          super(a);
+        }
+
+        //3. Method
+      }
+      let Bobj = new MyB(30);
+      Bobj.showResult();
+    </script>
+  </body>
+</html>
